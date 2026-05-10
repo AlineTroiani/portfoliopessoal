@@ -1,0 +1,214 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tema claro (padrão) */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding-top: 60px; /* espaço para o menu fixo */
+}
+
+/* Menu fixo no topo */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #333;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #3be4ba;
+}
+
+/* Seções */
+section {
+    padding: 60px 20px;
+    min-height: 100vh;
+    border-bottom: 2px solid #ddd; /* separador visual */
+}
+
+/* Sobre mim: foto + texto lado a lado */
+.sobre-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.foto-perfil {
+    width: 250px;
+    height: 250px;
+    border-radius: 80%;
+    object-fit: cover;
+    border: 3px solid #3be4ba;
+}
+
+/* Formulário de contato */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input, form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    margin-top: 15px;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #3be4ba;
+}
+
+/* ========================= */
+/* Tema escuro (dark-theme) */
+/* ========================= */
+body.dark-theme {
+    background-color: #121212;
+    color: #f5f5f5;
+}
+
+body.dark-theme nav {
+    background: #222;
+}
+
+body.dark-theme nav ul li a {
+    color: #f5f5f5;
+}
+
+body.dark-theme nav ul li a:hover {
+    color: #3be4ba;
+}
+
+body.dark-theme section h1 {
+    color: #f5f5f5;
+}
+
+body.dark-theme form input,
+body.dark-theme form textarea {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+    border: 1px solid #555;
+}
+
+body.dark-theme form button {
+    background: #444;
+    color: #f5f5f5;
+}
+
+body.dark-theme form button:hover {
+    background: #3be4ba;
+    color: #000;
+}
+
+/* Botão de alternar tema */
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    background: #333;
+    color: #fff;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #3be4ba;
+    color: #000;
+}
+
+body.dark-theme button {
+    background: #444;
+    color: #f5f5f5;
+}
+
+body.dark-theme button:hover {
+    background: #3be4ba;
+    color: #000;
+}
+
+/* ========================= */
+/* Responsividade            */
+/* ========================= */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    .sobre-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .foto-perfil {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 18px;
+    }
+
+    nav {
+        padding: 5px 0;
+    }
+
+    .foto-perfil {
+        width: 150px;
+        height: 150px;
+    }
+
+    form {
+        max-width: 100%;
+    }
+}
